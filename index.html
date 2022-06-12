@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="./script.js"></script>
+    <title>Rock, Paper, Scissors!</title>
+    <link rel="icon" type="image/x-icon" href="./img/scissors.png">
+</head>
+<body> 
+    <div class="container">
+        <div class="menu">
+            <div class="choices-list img-list">
+                <div class="choice-btn" name="computer-choice"><img src="./img/rock.png" alt="rock" class="choice-img choice-img2"></div>
+                <div class="choice-btn" name="computer-choice"><img src="./img/paper.png" alt="paper" class="choice-img choice-img2" ></div>
+                <div class="choice-btn" name="computer-choice"><img src="./img/scissors.png" alt="scissors" class="choice-img choice-img2"></div>
+            </div>
+            <h1 class="title">Rock, Paper, Scissors!</h1>
+            <div class="btn-menu">
+                <button class="btn" onclick="plays()">Play</button>
+                <button class="btn" onclick="credits()">Credits</button>
+            </div>
+        </div>
+        
+        <div class="game" hidden>
+            <h1 class="title2">Rock, Paper, Scissors!</h1>
+
+            <div class="players">
+                <div class="human flex-center">
+                    <img src="./img/humanc.png" alt= "human" class="player-img">
+                    <h2 class="question">Your Pick</h2>
+                    <div class="choices-list">
+                        <button class="choice-btn" onclick="gamefun('rock',computerplayer())" id="rockbtnh"><img src="./img/rock.png" alt="rock" class="choice-img choice-unique"></button>
+                        <button class="choice-btn" onclick="gamefun('paper',computerplayer())" id="paperbtnh"><img src="./img/paper.png" alt="paper" class="choice-img choice-unique"></button>
+                        <button class="choice-btn" onclick="gamefun('scissors',computerplayer())" id="scissorsbtnh"><img src="./img/scissors.png" alt="scissors" class="choice-img choice-unique"></button>
+                    </div>
+                    <h3 id="compscore">Score: <span id="myscoretxt"></span></h3>
+                </div>  
+
+                <div class="computer flex-center">
+                    <img src="./img/robotc.png" alt= "robot" class="player-img robotimg">
+                    <h2 class="question">Computer's Pick</h2>
+                    <div class="choices-list computer-list">
+                        <button class="choice-btn" name="computer-choice" id="rockbtnc"><img src="./img/rock.png" alt="rock" class="choice-img choice-unique"></button>
+                        <button class="choice-btn" name="computer-choice" id="paperbtnc"><img src="./img/paper.png" alt="paper" class="choice-img choice-unique"></button>
+                        <button class="choice-btn" name="computer-choice" id="scissorsbtnc"><img src="./img/scissors.png" alt="scissors" class="choice-img choice-unique"></button>
+                    </div>
+                    <h3 id="compscore">Score: <span id="compscoretxt"></span></h3>
+                </div>
+            </div>
+
+            <audio id="correctaudio" src="./audio/correctsound.m4a" preload="auto"></audio> 
+            <audio id="wrongaudio" src="./audio/wrongsound.m4a" preload="auto"></audio> 
+            <audio id="drawaudio" src="./audio/drawaudio.m4a" preload="auto"></audio> 
+
+
+        </div>
+
+        <div class="win-container win-container1" >
+            <img src="./img/youwin.png" alt="winner" class="win-img">
+            <audio id="winaudio" src="./audio/johncenawin.m4a" preload="auto"></audio> 
+            <button class="btn play-again margintop" id="playagain" onclick="playagain()">Play Again</button>
+            <button class="btn play-again" id="returntomenu" onclick="location.reload()">Return to Menu</button>
+        </div>
+
+        <div class="win-container lose-container" >
+            <img src="./img/youlose.png" alt="winner" class="win-img lose-img">
+            <audio id="sadaudio" src="./audio/sadmusic.m4a" preload="auto"></audio> 
+            <button class="btn play-again margintop play-again-2" id="playagain" onclick="playagain()">Play Again</button>
+            <button class="btn play-again play-again-2" id="returntomenu" onclick="location.reload()">Return to Menu</button>
+        </div>
+
+    </div>
+</body>
+</html>

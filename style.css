@@ -1,0 +1,436 @@
+:root {
+    --color-primary:#3ca59d;
+    --color-primary-light:#B3FFAB ;
+    --color-primary-dark:#12FFF7 ;
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+    --line: 1px solid var(--color-grey-light-2);
+    --shadow-light-1: 0 1.5rem 4.5rem rgba(0,0,0,.1);
+    --shadow-dark-1: 0 2rem 6rem rgba(0,0,0,.3);
+    --shadow-dark-2: 0 2rem 4rem rgba(0,0,0,.2);
+  }
+
+*,*::before, *::after {
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+
+}
+
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    font-weight: 400;
+    background-image: linear-gradient(to right top, var(--color-primary-light), var(--color-primary-dark));
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+
+.container {
+    width: 1200px;
+    max-width: 90%;
+    height: 90vh;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.menu {
+    margin-top: 3%;
+}
+
+.title {
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+
+}
+
+.btn-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.btn {
+    font-size: 35px;
+    cursor: pointer;
+    padding: 15px;
+    margin-top: 20px;
+    border: .1px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 75%;
+    background-color: #fff;
+    color: var(--color-primary);
+    transition: all .2s;
+    font-weight: 500;
+
+}
+
+.btn:hover {
+   background-color: var(--color-primary);
+   color: #fff;
+}
+
+.btn:active {
+    background-color: #53ccc2;
+}
+
+.game {
+    width: 90%;
+    height: 100%;
+    animation: append-animate .6s linear;
+}
+
+#compscore {
+    font-size: 1.3em;
+}
+
+
+.title2 {
+    font-size: 40px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.players {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+}
+
+.human {
+    width: 50%;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.computer {
+    width: 50%;
+
+}
+
+.player-img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+}
+
+.choice-img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+}
+
+.choice-btn {
+    text-decoration: none;
+    all: unset;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.choice-btn:hover {
+    transform: scale(1.1);
+}
+
+
+.robotimg {
+    width: 160px;
+}
+
+.result_container {
+position: absolute;
+top:50%; 
+left: 50%; 
+transform: translate(-50%,-50%);
+background-color:white; z-index: 999;
+transition: all 2s;
+}
+
+.computer-choices-animation {
+    animation: computerchoice-animation .8s 2;
+}
+
+@keyframes append-animate {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;	
+	}
+}
+
+@keyframes computerchoice-animation { 
+    from {
+        transform: none;
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes playagainanimation {
+    0% {
+		opacity: 0;
+    } 
+    50% {
+        opacity: 0;
+    }
+    100% {
+		opacity: 1;	
+    }
+}
+.win-container {
+    z-index: 999;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+}
+
+.win-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    animation: append-animate 1s linear;
+}
+
+.lose-container {
+    top: 43%;
+    left: 50%;
+
+}
+
+
+.play-again {
+    font-size: 30px;
+    width: 300px;
+    margin-left: 23%;
+    animation: playagainanimation 3s linear;
+}
+
+.play-again-2 {
+    margin-left: 0;
+}
+
+
+.margintop {
+    margin-top: -50px;
+}
+
+.choice-img2 {
+    cursor:auto;
+    margin-left: 20px;
+    max-width: 150px;
+}
+
+.img-list {
+    margin-left: -35px;
+}
+
+/*
+Media Queries
+*/
+
+@media only screen and (max-width: 770px)  {
+    .choice-unique {
+        max-width: 80px;
+    }
+
+    .choice-img2 {
+        max-width: 130px;
+    }
+    .title {
+        font-size: 45px;
+    }
+    .title2 {
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 620px)  {
+    .choice-unique {
+        max-width: 60px;
+    }
+
+    .player-img {
+        max-width: 150px;
+    }
+
+    .robotimg {
+        max-width: 132px;
+    }
+
+    .choice-img2 {
+        max-width: 110px;
+    }
+    .title {
+        font-size: 35px;
+    }
+    .title2 {
+        font-size: 25px;
+    }
+
+    .btn-menu {
+        margin-top: 15px;
+    }
+
+    .btn {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+
+}
+
+
+@media only screen and (max-width: 480px)  {
+    .choice-unique {
+        max-width: 50px;
+    }
+
+    .player-img {
+        max-width: 150px;
+    }
+
+    .robotimg {
+        max-width: 132px;
+    }
+
+    .choice-img2 {
+        max-width: 100px;
+    }
+    .title {
+        font-size: 35px;
+    }
+    .title2 {
+        font-size: 25px;
+    }
+
+    .btn-menu {
+        margin-top: 15px;
+    }
+
+    .btn {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 375px)  {
+    .choice-unique {
+        max-width: 45px;
+    }
+
+    .player-img {
+        max-width: 120px;
+    }
+
+    .robotimg {
+        max-width: 107px;
+    }
+
+    .choice-img2 {
+        max-width: 80px;
+    }
+    .title {
+        font-size: 30px;
+    }
+    .title2 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+    h3 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 320px)  {
+    .choice-unique {
+        max-width: 40px;
+    }
+
+    .player-img {
+        max-width: 90px;
+    }
+
+    .robotimg {
+        max-width: 78px;
+    }
+
+    .choice-img2 {
+        max-width: 70px;
+        margin-left: 23px;
+    }
+    .title {
+        font-size: 25px;
+    }
+    .title2 {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+    h3 {
+        font-size: 10px;
+    }
+
+    .menu {
+        margin-top: 30px;
+    }
+}
+
