@@ -214,6 +214,6 @@ function playagain() {
 
 }
 
-function credits() {
-    alert("Gaza Sky Geeks - Code Academy Project Made by Abdallah Alshawaf")
+function source() {
+    window.open('https://github.com/abdallah-alshawaf/rock-paper-scissors', '_blank')
 }
