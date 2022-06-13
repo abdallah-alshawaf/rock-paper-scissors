@@ -204,6 +204,16 @@ transition: all 2s;
 		opacity: 1;	
     }
 }
+
+@keyframes customizelist-animation {
+    0% {
+		opacity: 0;
+    } 
+    100% {
+		opacity: 1;
+    }
+}
+
 .win-container {
     z-index: 999;
     position: absolute;
@@ -258,6 +268,81 @@ transition: all 2s;
 .img-list {
     margin-left: -35px;
 }
+
+.customizelist {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: var(--shadow-light-1);
+    animation: customizelist-animation .2s linear;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.x {
+    display: inline-block;
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    width: 10%;
+    text-align: center;
+    font-size: 2rem;
+    transition: all .2s;
+}
+
+.x:hover{
+    background-color: var(--color-grey-dark-3);
+    color: white;
+    
+}
+
+.choicediv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 1rem;
+    font-size: 1.6rem;
+    margin: 1rem;
+    cursor: pointer;
+    
+}
+
+.choicediv label {
+    cursor: pointer;
+
+}
+
+#choice1, #choice2 {
+    margin-bottom: -.08rem;
+    margin-right: .4rem;
+    cursor: pointer;
+
+}
+
+input[type="radio"]  {
+    display: block;
+    background-color: black;
+    height: 25px;
+    width: 25px;
+}
+
+.change {
+    width: auto;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
 
 /*
 Media Queries

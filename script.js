@@ -41,7 +41,23 @@ const wrongsound = document.getElementById('wrongaudio');
 const drawsound = document.getElementById('drawaudio');
 
 
-//Play Again, Menu
+//Customize
+const customizes = document.getElementById('customizelist');
+const title1 = document.getElementById('title1');
+const title2 = document.getElementById('title2');
+const choice1 = document.getElementById('choice1');
+const choice2 = document.getElementById('choice2');
+const mainrock = document.getElementById('mainrock');
+const mainpaper = document.getElementById('mainpaper');
+const mainscissors = document.getElementById('mainscissors');
+
+const secondrock = document.getElementById('secondrock');
+const secondpaper = document.getElementById('secondpaper');
+const secondscissors = document.getElementById('secondscissors');
+
+const thirdrock = document.getElementById('thirdrock');
+const thirdpaper = document.getElementById('thirdpaper');
+const thirdscissors = document.getElementById('thirdscissors');
 
 
 
@@ -52,6 +68,7 @@ function plays() {
 
 function gamefun(player1, player2) {
     let choicesArray = ["rock", "paper", "scissors"];
+    // This array is the equivalent of ["water", "wood", "fire"] so there's no need to change it in the functions bellow.
     let player1choice = choicesArray.indexOf(player1);
     let player2choice = choicesArray.indexOf(player2);
     
@@ -214,6 +231,52 @@ function playagain() {
 
 }
 
-function source() {
-    window.open('https://github.com/abdallah-alshawaf/rock-paper-scissors', '_blank')
+function xclick() {
+    customizes.style.display = "none"
 }
+
+function customize() {
+    customizes.style.display = "flex";
+}
+
+function change() {
+    if (choice2.checked) {
+        title1.textContent = "Water, Wood, Fire!";
+        title2.textContent = "Water, Wood, Fire!";
+        mainrock.src = "./img/Water.png";
+        mainpaper.src = "./img/wood.png";
+        mainscissors.src = "./img/fire.png";
+
+        secondrock.src = "./img/Water.png";
+        secondpaper.src = "./img/wood.png";
+        secondscissors.src = "./img/fire.png";
+
+        thirdrock.src = "./img/Water.png";
+        thirdpaper.src = "./img/wood.png";
+        thirdscissors.src = "./img/fire.png";
+
+
+    }
+
+    if (choice1.checked) {
+        title1.textContent = "Rock, Paper, Scissors!";
+        title2.textContent = "Rock, Paper, Scissors!";
+        mainrock.src = "./img/rock.png";
+        mainpaper.src = "./img/paper.png";
+        mainscissors.src = "./img/scissors.png"
+
+        secondrock.src = "./img/rock.png";
+        secondpaper.src = "./img/paper.png";
+        secondscissors.src = "./img/scissors.png"
+
+        thirdrock.src = "./img/rock.png";
+        thirdpaper.src = "./img/paper.png";
+        thirdscissors.src = "./img/scissors.png"
+
+    }
+}
+
+
+    
+
+  
