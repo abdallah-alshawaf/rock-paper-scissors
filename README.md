@@ -1,1 +1,1 @@
-# GSG - Rock, Paper, Scissors! Javascript Project
+# GSG - Javascript Project: Rock, Paper, Scissors! 
